@@ -1,0 +1,44 @@
+# ============================================================
+#  FloydEnchantPlus 配置文件
+#  功能模块：忠诚 IV（Loyalty IV）附魔
+# ============================================================
+
+enchants:
+  loyal_iv:
+    # 是否启用该附魔
+    enabled: true
+
+    # 雷罚作用半径（格）
+    strike_radius: 30.0
+
+    # 雷击间隔（刻，20刻=1秒）
+    strike_interval_ticks: 30 # 即1.5秒
+
+    # 雷罚最大持续时长（秒），防止死循环（强制熔断）
+    strike_max_duration_seconds: 20
+
+    # 触发后的冷却时间（秒）
+    cooldown_seconds: 300
+
+    # 触发时消耗的耐久度（不足则物品直接损毁）
+    durability_cost: 150
+
+    # 是否在触发时播放图腾动画（音效 + 图腾粒子）
+    play_totem_animation: true
+
+    # 是否允许闪电破坏地形（建议 false；false 时使用视觉闪电 + 手动结算伤害，不产生火焰）
+    lightning_fire_damage: false
+
+    # ---------------- 扩展配置（PRD 之外的可选项） ----------------
+
+    # 雷击单次伤害（仅 lightning_fire_damage: false 的手动结算路径生效；原版闪电为 5.0）
+    lightning_damage: 5.0
+
+    # 触发时是否向全服广播「触发了雷霆审判！」
+    broadcast_trigger: true
+
+    # 是否隐藏原版附魔提示行（避免「忠诚 III」与「忠诚 IV」重复显示，见 PRD 5.1）
+    hide_vanilla_enchant_lore: true
+
+    # 说明：虚空伤害（DamageCause.VOID）不触发本效果为硬编码行为，
+    #       不提供配置项（对应 PRD 中被注释的 ignore_void_damage 字段）。

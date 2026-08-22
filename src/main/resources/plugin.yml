@@ -1,0 +1,22 @@
+name: FloydEnchantPlus
+version: 1.0.0
+main: cloud.floydzero.floydenchantplus.FloydEnchantPlusPlugin
+api-version: '1.21'
+authors: [Floyd]
+description: 忠诚 IV 附魔 —— 死亡救赎与雷霆审判
+website: https://floydzero.cloud
+
+commands:
+  floydenchantplus:
+    description: FloydEnchantPlus 主命令
+    usage: /fep <give|apply|reload>
+    aliases: [fep]
+    permission: floydenchantplus.use
+
+permissions:
+  floydenchantplus.use:
+    description: 使用 FloydEnchantPlus 基础命令
+    default: true
+  floydenchantplus.admin:
+    description: 管理命令（give / apply / reload）
+    default: op
